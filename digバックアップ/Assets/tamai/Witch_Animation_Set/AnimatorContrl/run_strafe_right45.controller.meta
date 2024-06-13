@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e3efb2ae6b3f98247b284c1ebf35d992
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 136189
+  packageName: Witch Animation Set
+  packageVersion: 1.1
+  assetPath: Assets/Witch_Animation_Set/AnimatorContrl/run_strafe_right45.controller
+  uploadId: 500050

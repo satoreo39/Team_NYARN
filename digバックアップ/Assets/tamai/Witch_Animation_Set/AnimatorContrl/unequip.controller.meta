@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0cc17688a6836984dbe5906c88e91e03
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 136189
+  packageName: Witch Animation Set
+  packageVersion: 1.1
+  assetPath: Assets/Witch_Animation_Set/AnimatorContrl/unequip.controller
+  uploadId: 500050

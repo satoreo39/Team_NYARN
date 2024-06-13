@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b0a8ee954e25c644a920b4c7188a9062
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 136189
+  packageName: Witch Animation Set
+  packageVersion: 1.1
+  assetPath: Assets/Witch_Animation_Set/AnimatorContrl/turn_R180.controller
+  uploadId: 500050

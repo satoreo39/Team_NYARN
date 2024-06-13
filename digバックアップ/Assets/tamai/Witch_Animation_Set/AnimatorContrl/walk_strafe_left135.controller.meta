@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 88af99cf55d3234468e8555db15ee3e6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 136189
+  packageName: Witch Animation Set
+  packageVersion: 1.1
+  assetPath: Assets/Witch_Animation_Set/AnimatorContrl/walk_strafe_left135.controller
+  uploadId: 500050

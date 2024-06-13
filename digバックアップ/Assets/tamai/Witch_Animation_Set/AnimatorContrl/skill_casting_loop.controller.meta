@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 14f187cfdc93e9740a3c2e8c2c518958
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 136189
+  packageName: Witch Animation Set
+  packageVersion: 1.1
+  assetPath: Assets/Witch_Animation_Set/AnimatorContrl/skill_casting_loop.controller
+  uploadId: 500050

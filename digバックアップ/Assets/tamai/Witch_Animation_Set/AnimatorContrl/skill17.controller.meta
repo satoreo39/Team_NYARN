@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f52c5b828ec37ef4d94fdedb8e1e7f1b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 136189
+  packageName: Witch Animation Set
+  packageVersion: 1.1
+  assetPath: Assets/Witch_Animation_Set/AnimatorContrl/skill17.controller
+  uploadId: 500050
