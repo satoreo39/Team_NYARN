@@ -369,9 +369,19 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2023.1.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2023.1.20f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/Scripts/DebugSc.cs"
-"Assets/Scripts/RandmeMapGenerate.cs"
+"Assets/sakakihara/Scripts/DecoyScript.cs"
+"Assets/sakakihara/Scripts/EnemyNearsScripts.cs"
+"Assets/sakakihara/Scripts/EnemyScript.cs"
+"Assets/sakakihara/Scripts/FloorColor.cs"
+"Assets/sakakihara/Scripts/FloorHP.cs"
+"Assets/sakakihara/Scripts/HoleScript.cs"
+"Assets/sakakihara/Scripts/PitfallScript.cs"
+"Assets/sakakihara/Scripts/PlayerScript.cs"
+"Assets/sakakihara/Scripts/SPlayerMove.cs"
+"Assets/sasaki/Scripts/DebugSc.cs"
+"Assets/sasaki/Scripts/RandmeMapGenerate.cs"
 "Assets/tamai/PlayerMove.cs"
+"Assets/tamai/TPlayerMove.cs"
 -langversion:9.0
 
 /deterministic

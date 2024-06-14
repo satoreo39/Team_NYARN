@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MAP.unity
+    path: Assets/sasaki/Scenes/MAP.unity
     guid: 24a1d3277de8d004295a5a410104d0c8
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
