@@ -22,7 +22,7 @@ public class TPlayerMove : MonoBehaviour
     // キャラにアタッチされるアニメーターへの参照
     private Animator anim;
     private Rigidbody rb;
-//    private CapsuleCollider col;
+    //    private CapsuleCollider col;
 
     void Start()
     {
@@ -34,18 +34,18 @@ public class TPlayerMove : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
         // CapsuleColliderコンポーネントを取得する（カプセル型コリジョン）
- //       col = GetComponent<CapsuleCollider>();
+        //       col = GetComponent<CapsuleCollider>();
     }
 
     private void Update()
     {
-        if( inputX >= 0 || inputZ >= 0 )
+
+        if (inputX != 0 || inputZ != 0)
         {
             anim.SetBool("run", true); // Animator側で設定している"run"パラメタにtuerを渡す
-
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.L))
         {
             anim.SetTrigger("dig"); // Animator側で設定している"horu"パラメタにTriggerを渡す
 
@@ -61,9 +61,8 @@ public class TPlayerMove : MonoBehaviour
         else
         {
             rb.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX |
-                RigidbodyConstraints.FreezeRotationZ;
+            RigidbodyConstraints.FreezeRotationZ;
         }
-
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -72,28 +71,36 @@ public class TPlayerMove : MonoBehaviour
         //キー入力の受付
         inputX = Input.GetAxisRaw("Horizontal");//a←-1
         inputZ = Input.GetAxisRaw("Vertical");//ｗ前進1
-        //print(inputX + "," + inputZ);//確認用
+        print(inputX + "," + inputZ);//確認用
 
         //プレイヤーの移動
         this.GetComponent<Rigidbody>().velocity
            = new Vector3(inputX * _speed, 0, inputZ * _speed);
 
+        //＜さかきはらさんの移動スクリプト＞
+        
         //プレイヤー向き
         switch (inputX)
         {
-            //            default:
-            //                transform.rotation
-            //= Quaternion.Euler(0, 0, 0); break;
+            default:
+                transform.rotation = this.transform.rotation;
+                break;
 
             case -1:
                 transform.rotation
-                 = Quaternion.Euler(0, -90, 0); break;
+                 = Quaternion.Euler(0, -90, 0);
+                break;
             case 1:
                 transform.rotation
-                 = Quaternion.Euler(0, 90, 0); break;
+                 = Quaternion.Euler(0, 90, 0);
+                break;
         }
         switch (inputZ)
         {
+            default:
+                transform.rotation = this.transform.rotation;
+                break;
+
             case -1:
                 transform.rotation
                  = Quaternion.Euler(0, 180, 0); break;
@@ -101,30 +108,31 @@ public class TPlayerMove : MonoBehaviour
                 transform.rotation
                  = Quaternion.Euler(0, 0, 0); break;
         }
+        
 
         //＜玉井さんの移動スクリプト＞
         /*
-           inputX = Input.GetAxisRaw("Horizontal");
-           inputZ = Input.GetAxisRaw("Vertical");
+        inputX = Input.GetAxisRaw("Horizontal");
+        inputZ = Input.GetAxisRaw("Vertical");
 
-           // 以下、キャラクターの移動処理
-           // 上下のキー入力からZ軸方向の移動量を取得
-           velocity = new Vector3(InputX, 0, InputZ);
-           velocity *= _speed;
+        // 以下、キャラクターの移動処理
+        // 上下のキー入力からZ軸方向の移動量を取得
+        velocity = new Vector3(inputX, 0, inputZ);
+        velocity *= _speed;
 
-           // 上下のキー入力でキャラクターを移動させる
-           transform.localPosition += velocity * Time.fixedDeltaTime;
+        // 上下のキー入力でキャラクターを移動させる
+        transform.localPosition += velocity * Time.fixedDeltaTime;
 
-           //移動後のキャラクターが前回からどの方向に進んだか差分を取得する
-           Vector3 diff = transform.position - playerPos;
+        //移動後のキャラクターが前回からどの方向に進んだか差分を取得する
+        Vector3 diff = transform.position - playerPos;
 
-           if (diff.magnitude > 0.01f)
-           {
-               //差異があった場合にのみ向きを変更する
-               transform.rotation = Quaternion.LookRotation(diff);
-           }
+        if (diff.magnitude > 0.01f)
+        {
+            //差異があった場合にのみ向きを変更する
+            transform.rotation = Quaternion.LookRotation(diff);
+        }
 
-           playerPos = transform.position; //プレイヤー位置情報を更新
+        playerPos = transform.position; //プレイヤー位置情報を更新
         */
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyNearsScripts : MonoBehaviour
 {
+    //敵につけるスクリプト
     Transform playerTr; // プレイヤーのTransform
-
     Transform decoyTr; // 囮のTransform
     Transform nearsTr; // 追いかける相手のTransform
 

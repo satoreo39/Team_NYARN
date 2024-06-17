@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FloorColor : MonoBehaviour
 {
+    //床につけるスクリプト
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("HolePosition"))//プレイヤーの前に来たら

@@ -377,6 +377,7 @@
 "Assets/sakakihara/Scripts/HoleScript.cs"
 "Assets/sakakihara/Scripts/PitfallScript.cs"
 "Assets/sakakihara/Scripts/PlayerScript.cs"
+"Assets/sakakihara/Scripts/SakakiharaPlayerMove.cs"
 "Assets/sakakihara/Scripts/SPlayerMove.cs"
 "Assets/sasaki/Scripts/DebugSc.cs"
 "Assets/sasaki/Scripts/RandmeMapGenerate.cs"

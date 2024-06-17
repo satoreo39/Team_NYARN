@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerScript : MonoBehaviour
 {
+    //プレイヤーにつけるスクリプト
+    //穴掘り処理
+
     private int playerHp;//プレイヤー体力
 
     private bool isInput0 = false;//キー入力フラグ掘る

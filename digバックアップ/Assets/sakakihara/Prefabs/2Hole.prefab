@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 68840662802061797}
   - component: {fileID: 4769157447077372153}
   - component: {fileID: 4704558194380269520}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 2Hole
   m_TagString: 2
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ CapsuleCollider:
   m_Radius: 0.5000001
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4704558194380269520
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class HoleScript : MonoBehaviour
 {
+    //Holeにつけるスクリプト
+    //Hole(親)とHole0(子)を床と同じ大きさにしてください
+
     private int holeCnt;//穴段階
+
+    private int enemyCnt;//敵数
+    private int twoEnemyCnt;//
+    private int threeEnemyCnt;//
 
     private bool isInput0 = false;//キー入力フラグ
     private bool isInput1 = false;//キー入力フラグ
@@ -19,6 +26,7 @@ public class HoleScript : MonoBehaviour
     private float delOneTime = 3f;
     private float _delTimeElapsed;
 
+    private BoxCollider zeroCollider;//0段階コライダー
     private BoxCollider oneCollider;//１段階コライダー
     private CapsuleCollider twoCollider;//２段階コライダー
     private CapsuleCollider threeCollider;//３段階コライダー
@@ -26,6 +34,7 @@ public class HoleScript : MonoBehaviour
     private MeshRenderer twoMeshRenderer;//２段階見た目
     private MeshRenderer threeMeshRenderer;//３段階見た目
 
+    [SerializeField] private GameObject zeroHole;//穴オブジェクト１段階
     [SerializeField] private GameObject oneHole;//穴オブジェクト１段階
     [SerializeField] private GameObject twoHole;//穴オブジェクト２段階
     [SerializeField] private GameObject threeHole;//穴オブジェクト３段階
@@ -35,9 +44,11 @@ public class HoleScript : MonoBehaviour
     {
         //holeCnt = 0;
         holeCnt = 1;
-        oneHole = transform.GetChild(0).gameObject;
-        twoHole = transform.GetChild(1).gameObject;
-        threeHole = transform.GetChild(2).gameObject;
+        zeroHole = transform.GetChild(0).gameObject;
+        oneHole = transform.GetChild(1).gameObject;
+        twoHole = transform.GetChild(2).gameObject;
+        threeHole = transform.GetChild(3).gameObject;
+        zeroCollider = zeroHole.GetComponent<BoxCollider>();//１段階コライダー
         oneCollider = oneHole.GetComponent<BoxCollider>();//１段階コライダー
         twoCollider = twoHole.GetComponent<CapsuleCollider>();//２段階コライダー
         threeCollider = threeHole.GetComponent<CapsuleCollider>();//３段階コライダー
@@ -46,7 +57,7 @@ public class HoleScript : MonoBehaviour
         threeMeshRenderer = threeHole.GetComponent<MeshRenderer>();//３段階見た目
 
         NoHole();//見えない状態にする
-
+        _delTimeElapsed = 0f;
     }
 
     // Update is called once per frame
@@ -77,27 +88,28 @@ public class HoleScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))//スタン処理
         {
-            switch (holeCnt) 
+            if (holeCnt==1)
             {
-                default:
+                if (_delTimeElapsed >= delOneTime + 1)
+                {
+                    return;
+                }
+                _delTimeElapsed += Time.deltaTime;
+
+                if (_delTimeElapsed >= delOneTime )
+                {
+                    holeCnt = 0;
                     HoleGenerate();
-                    break;
-                case 1:
-                    if (_delTimeElapsed >= delOneTime + 1)
-                    {
-                        return;
-                    }
-                    _delTimeElapsed += Time.deltaTime;
-                    if (_delTimeElapsed >= delOneTime)
-                    {
-                        holeCnt = 0;
-
-                    }
-                    break;
+                }
             }
+            if (holeCnt == 2)
+            {
 
+            }
+            if (holeCnt == 3)
+            {
 
-   
+            }
         }
 
 
@@ -132,16 +144,23 @@ public class HoleScript : MonoBehaviour
         }
 
     }
-
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Enemy"))
+    //    {
+    //        HoleGenerate();
+    //    }
+    //}
     private void HoleGenerate()
     {
         switch (holeCnt)//穴段階
         {
             default:
                 NoHole();
+                zeroCollider.enabled = true;
+                _delTimeElapsed = 0;
                 break;
             case 1:
-                _delTimeElapsed = 0;
                 oneCollider.enabled = true;
                 oneMeshRenderer.enabled = true;
                 break;
@@ -239,6 +258,7 @@ public class HoleScript : MonoBehaviour
     }
     void NoHole()//穴なし状態
     {
+        zeroCollider.enabled = false;
         oneCollider.enabled = false;
         twoCollider.enabled = false;
         threeCollider.enabled = false;

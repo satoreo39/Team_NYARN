@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PitfallScript : MonoBehaviour
 {
-
+    //床につけるスクリプト
     [SerializeField] private int nowLayer;//現在のレイヤー番号
     [SerializeField, Multiline(5)]//説明欄（４行）
     private string layerMemo = ("・0:Default \n・7:Pitfall \n・0 \n・0 ");
@@ -15,28 +15,26 @@ public class PitfallScript : MonoBehaviour
     {
         layerMemo
         = ("・0:Default \n・7:Pitfall \n・0 \n・0 ");//\nで改行
+        this.gameObject.layer = 0;//レイヤー変更
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
 
-    }
-    private void OnTriggerStay(Collider other)
-    {
         if (other.gameObject.CompareTag("2") ||
-            other.gameObject.CompareTag("3"))
+    other.gameObject.CompareTag("3"))
         {
             this.gameObject.layer = 7;//レイヤー変更
         }
-        else
+
+        if (this.gameObject.layer == 0)
+        {
+            return;
+        }
+        if (other.gameObject.CompareTag("0")|| 
+            other.gameObject.CompareTag("1"))
         {
             this.gameObject.layer = 0;//レイヤー変更
         }
-
-
     }
-
-
-
 }
